@@ -1,11 +1,12 @@
 // api.js - All backend API calls in one place
-// Vite proxy forwards /movies and /auth → http://localhost:5000
+// Vite proxy forwards /movies and /auth → http://localhost:5000 when VITE_BACKEND_URL is not set
 
-const BASE = ""
+const BackendAPI = (import.meta.env.VITE_BACKEND_URL || "").replace(/\/$/, "")
 
 async function request(path, options = {}) {
   const token = localStorage.getItem("ott_token")
-  const res = await fetch(BASE + path, {
+  const url = BackendAPI ? `${BackendAPI}${path}` : path
+  const res = await fetch(url, {
     headers: {
       "Content-Type": "application/json",
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
