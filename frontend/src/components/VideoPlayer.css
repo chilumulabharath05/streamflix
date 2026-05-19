@@ -1,0 +1,105 @@
+/* VideoPlayer.css */
+.vplayer {
+  position: relative;
+  background: #000;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  cursor: pointer;
+}
+
+.vplayer-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Controls */
+.vplayer-controls {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+  padding: 1.5rem 1rem 0.75rem;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.controls-visible .vplayer-controls { opacity: 1; }
+
+/* Progress bar */
+.vplayer-progress {
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 0.6rem;
+  position: relative;
+}
+.vplayer-progress:hover { height: 6px; }
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.vplayer-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.vplayer-left, .vplayer-right {
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.vplayer-right { margin-left: auto; }
+
+.vtitle {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  flex: 1;
+  text-align: center;
+}
+
+.vctrl-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 4px;
+  opacity: 0.85;
+  transition: opacity 0.15s;
+}
+.vctrl-btn:hover { opacity: 1; }
+
+.volume-slider {
+  width: 70px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.vtime {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.65);
+  white-space: nowrap;
+}
+
+/* Big play button */
+.big-play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(229,9,20,0.85);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.15s;
+  backdrop-filter: blur(4px);
+}
+.big-play:hover { transform: translate(-50%, -50%) scale(1.1); }

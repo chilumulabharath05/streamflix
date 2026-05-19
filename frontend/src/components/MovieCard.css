@@ -1,0 +1,91 @@
+/* MovieCard.css */
+.movie-card {
+  cursor: pointer;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: transform 0.25s, box-shadow 0.25s;
+  outline: none;
+}
+.movie-card:hover,
+.movie-card:focus-visible {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.7);
+}
+.movie-card:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent), 0 20px 48px rgba(0,0,0,0.7);
+}
+
+/* Poster */
+.card-poster-wrap {
+  position: relative;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+.card-poster {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s;
+}
+.movie-card:hover .card-poster { transform: scale(1.06); }
+
+/* Overlay */
+.card-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.movie-card:hover .card-overlay { opacity: 1; }
+
+.play-btn {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.15s;
+}
+.play-btn:hover { transform: scale(1.1); }
+
+/* Genre badge */
+.card-genre-badge {
+  position: absolute;
+  top: 0.6rem; left: 0.6rem;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  text-transform: uppercase;
+}
+
+/* Info */
+.card-info {
+  padding: 0.75rem;
+}
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-year {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
