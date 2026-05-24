@@ -72,3 +72,6 @@ GET  /movies/genres      - All genres
 GET  /movies/:id         - Full details + trailer + cast
 POST /auth/signup        - Register
 POST /auth/login         - Login (returns JWT)
+
+## Live
+https://streamflix-beta-five.vercel.app/
