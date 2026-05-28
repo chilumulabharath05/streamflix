@@ -1,7 +1,7 @@
 # 🎬 StreamFlix — OTT Movie Streaming App
 
 Built with **React 18 + Vite** (frontend) and **Node.js + Express + TMDB API** (backend).
-Zero vulnerabilities. Ready for **Vercel + Render** deployment.
+Zero vulnerabilities.
 
 ---
 
